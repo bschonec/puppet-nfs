@@ -55,7 +55,7 @@ jobs:
       fail-fast: false
       matrix:
         puppet: [puppet7, puppet8]
-        beakerset: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, centos-7, cento-8, debian-10, debian-11]
+        beakerset: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, centos-7, centos-8, debian-10, debian-11]
 
     name: Integration tests
     runs-on: ubuntu-20.04
