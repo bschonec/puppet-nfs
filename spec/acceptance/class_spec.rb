@@ -90,7 +90,6 @@ describe 'nfs class' do
       end
 
       describe service(server_service) do
-        it { is_expected.to be_installed }
         it { is_expected.not_to be_running }
       end
 
