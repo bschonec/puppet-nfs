@@ -9,7 +9,7 @@ on:
 jobs:
   test-static-current:
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         puppet: [7.22.0]
         ruby: [2.7.7, 3.0.5, 3.1.3]
@@ -47,7 +47,7 @@ jobs:
         PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake rubocop
   test-integration:
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         puppet: [puppet7, puppet8]
         beakerset: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, centos-7, debian-10, debian-11]
