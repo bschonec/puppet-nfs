@@ -56,7 +56,7 @@ else
   gem 'facter', require: false, groups: [:test]
 end
 
-puppetversion = ENV['PUPPET_VERSION'].nil? ? '~> 7.0' : ENV['PUPPET_VERSION'].to_s
+puppetversion = ENV['PUPPET_VERSION'].nil? ? '~> 7' : ENV['PUPPET_VERSION'].to_s
 gem 'puppet', puppetversion, require: false, groups: [:test]
 
 # vim:ft=ruby
