@@ -2,7 +2,7 @@
 # Managed by modulesync - DO NOT EDIT
 # https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
 
-name: CI
+name: CI Beaker tests
 
 on: pull_request
 
