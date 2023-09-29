@@ -3,6 +3,11 @@ name: Brians test jobssss....
 on:
   push:
 
+concurrency:
+  group: ${{ github.ref_name }}
+  cancel-in-progress: true
+
+
 jobs:
   run_if_label_matches:
     runs-on: ubuntu-latest
