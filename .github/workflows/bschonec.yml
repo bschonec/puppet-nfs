@@ -1,9 +1,7 @@
 name: Brians test job
 
 on:
-  issues:
-    types:
-      - labeled
+  push:
 
 jobs:
   run_if_label_matches:
