@@ -1,0 +1,15 @@
+name: Brians test job
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  run_if_label_matches:
+    if: github.event.label.name == 'bug'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'The label was bug'
+
+
