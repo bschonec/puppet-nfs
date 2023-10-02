@@ -8,7 +8,5 @@ concurrency:
 
 jobs:
   puppet:
-    env:
-      unit_runs_on: centos8
     name: Puppet in beaker.yml
     uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v1
