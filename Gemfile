@@ -1,5 +1,7 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
+gem 'voxpupuli-test'
+
 # The development group is intended for developer tooling. CI will never install this.
 group :development do
 end
