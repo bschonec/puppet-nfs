@@ -1,4 +1,4 @@
-name: CI
+name: Puppet Job
 
 on: pull_request
 
@@ -8,5 +8,5 @@ concurrency:
 
 jobs:
   puppet:
-    name: Puppet
+    name: Puppet in puppet.yml.
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1

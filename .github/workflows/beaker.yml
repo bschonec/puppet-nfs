@@ -1,4 +1,4 @@
-name: CI
+name: Beaker Job
 
 on: push
 
@@ -8,5 +8,5 @@ concurrency:
 
 jobs:
   puppet:
-    name: Puppet
+    name: Puppet in beaker.yml
     uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v1
