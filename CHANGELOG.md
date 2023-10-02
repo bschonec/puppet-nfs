@@ -130,7 +130,7 @@
 - set $nfs_v4_idmap_domain to 'example.org' when $::domain is undef
 - add client service rpcbind.socket for RedHat 7
 - set client service rpcbind.service for RedHat 7 to enable => false
-- fix service parameters for Debian 7 
+- fix service parameters for Debian 7
 
 #### Features
 - update rubocop rules and fix ruby code style
@@ -149,7 +149,7 @@
 - add install locales on ubuntu-1604 docker for acceptance tests
 - add missing documentation for client_services_enable
 - reenable client_services_enable for CentOS/Redhat 7
-- remove rpc.idmapd from $client_nfsv4_services for Archlinux 
+- remove rpc.idmapd from $client_nfsv4_services for Archlinux
 - rename rpc.idmapd to nfs-idmapd in $server_nfsv4_servicehelper for archlinux
 - update adn fix spec tests
 
