@@ -15,4 +15,3 @@ begin
 rescue LoadError
   # Allowed to fail, only needed in release
 end
-
