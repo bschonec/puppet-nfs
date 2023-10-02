@@ -10,4 +10,3 @@ jobs:
   puppet:
     name: Puppet in puppet.yml.
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
-    working-directory: ./site/profiles
