@@ -49,7 +49,7 @@
 - ignore export root when bindmount is disabled
 - use BEAKER_PUPPET_COLLECTION in all beaker tests
 - do not include class by absolute name
-- revert use of File without defined() 
+- revert use of File without defined()
 - update rvm to 2.4.1 for PUPPET_VERSION 4.10.0
 
 ## 2019-02-12 - Release 2.1.2
