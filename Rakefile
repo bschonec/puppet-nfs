@@ -1,8 +1,25 @@
-require 'puppetlabs_spec_helper/rake_tasks'
+begin
+  require 'puppetlabs_spec_helper/rake_tasks'
+rescue LoadError
+  # Allowed to fail, only needed in test
+end
+
+begin
+  require 'beaker-rspec/rake_task'
+rescue LoadError
+  # Allowed to fail, only needed in acceptance
+end
+
+begin
+  require 'puppet_blacksmith/rake_tasks'
+rescue LoadError
+  # Allowed to fail, only needed in release
+end
+
 require 'puppet-lint/tasks/puppet-lint'
 require 'puppet-syntax/tasks/puppet-syntax'
 require 'metadata-json-lint/rake_task'
-require 'puppet_blacksmith/rake_tasks'
+#require 'puppet_blacksmith/rake_tasks'
 require 'voxpupuli/release/rake_tasks'
 require 'rubocop/rake_task'
 require 'puppet-strings/tasks'
