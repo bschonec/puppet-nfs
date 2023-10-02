@@ -281,7 +281,7 @@ class nfs (
   String $nfs_v4_export_root_clients                                                  = $nfs::params::nfs_v4_export_root_clients,
   String $nfs_v4_mount_root                                                           = $nfs::params::nfs_v4_mount_root,
   String $nfs_v4_idmap_domain                                                         = $nfs::params::nfs_v4_idmap_domain,
-  Variant[String, Array] $nfs_v4_idmap_localrealms                                    = '',
+  Variant[String, Array] $nfs_v4_idmap_localrealms                                    = 's',
   Integer $nfs_v4_idmap_cache                                                         = 0,
   Boolean $manage_nfs_v4_idmap_nobody_mapping                                         = false,
   String $nfs_v4_idmap_nobody_user                                                    = $nfs::params::nfs_v4_idmap_nobody_user,
