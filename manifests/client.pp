@@ -14,12 +14,24 @@
 #
 # * Daniel Klockenkaemper <mailto:dk@marketing-factory.de>
 #
-
+# @param ensure
+#   TODO: description
+#
+# @param nfs_v4 
+#   TODO: description
+#
+# @param  nfs_v4_mount_root
+#   TODO: description
+#
+# @param  nfs_v4_idmap_domain
+#   TODO: description
+#
 class nfs::client (
-  $ensure                     = $nfs::ensure,
+
+  Enum['present', 'absent'] $ensure                     = $nfs::ensure,
   $nfs_v4                     = $nfs::nfs_v4_client,
-  $nfs_v4_mount_root          = $nfs::nfs_v4_mount_root,
-  $nfs_v4_idmap_domain        = $nfs::nfs_v4_idmap_domain,
+  Stdlib::Absolutepath     $nfs_v4_mount_root          = $nfs::nfs_v4_mount_root,
+  Optional[String]         $nfs_v4_idmap_domain        = $nfs::nfs_v4_idmap_domain,
 ) {
   anchor { 'nfs::client::begin': }
   anchor { 'nfs::client::end': }

@@ -538,12 +538,6 @@ This will mount /data on client in /share/data.
   Nested Hash. It defines the servicenames need to be started when acting as a nfs client
   version 4.
 
-##### `client_service_hasrestart`
-  Boolean. It defines the service parameter hasrestart for nfs client services.
-
-##### `client_service_hasstatus`
-  Boolean. It defines the service parameter hasstatus for nfs client services.
-
 ##### `client_idmapd_setting`
   Array. It defines the Augeas parameter added in `defaults_file` when acting as a nfs
   version 4 client.
