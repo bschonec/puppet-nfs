@@ -1,0 +1,14 @@
+name: Puppet Job
+
+on: pull_request
+
+concurrency:
+  group: ${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  puppet:
+    name: Puppet in puppet.yml.
+    uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
+    with:
+      rubocop: false
