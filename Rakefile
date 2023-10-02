@@ -1,5 +1,5 @@
 begin
-  require 'puppetlabs_spec_helper/rake_tasks'
+  require 'puppetlabs_spec_helper/rake_task'
 rescue LoadError
   # Allowed to fail, only needed in test
 end
