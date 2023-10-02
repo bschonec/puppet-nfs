@@ -10,4 +10,4 @@ jobs:
   puppet:
     name: Puppet in beaker.yml
     uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v1
-    unit_runs_on: centos8
+    working-directory: ./site/profiles

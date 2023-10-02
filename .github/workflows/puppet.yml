@@ -10,4 +10,4 @@ jobs:
   puppet:
     name: Puppet in puppet.yml.
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
-    unit_runs_on: centos8
+    working-directory: ./site/profiles
