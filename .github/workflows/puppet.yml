@@ -8,5 +8,7 @@ concurrency:
 
 jobs:
   puppet:
+    env:
+      unit_runs_on: centos8
     name: Puppet in puppet.yml.
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
