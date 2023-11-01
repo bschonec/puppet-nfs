@@ -30,6 +30,10 @@ jobs:
       env:
         PUPPET_VERSION: ${{ matrix.puppet }}
 
+    - name: Run list tasks
+      run: |
+        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake --tasks
+
     - name: Run metadata lint
       run: |
         PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake metadata_lint
