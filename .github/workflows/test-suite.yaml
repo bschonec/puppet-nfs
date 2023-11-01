@@ -34,3 +34,22 @@ jobs:
       run: |
         PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake --tasks
 
+    - name: Run metadata lint
+      run: |
+        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake metadata_lint
+
+    - name: Run puppet lint
+      run: |
+        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake lint
+
+    - name: Run puppet syntax check
+      run: |
+        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake syntax
+
+    - name: Run puppet rspec tests
+      run: |
+        PUPPET_VERSION=${{ matrix.puppet }} STRICT_VARIABLES=yes bundle exec rake spec
+
+    - name: Run rubocop tests
+      run: |
+        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake rubocop
