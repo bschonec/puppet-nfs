@@ -34,3 +34,10 @@ jobs:
       run: |
         PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake --tasks
 
+    - name: Run metadata lint
+      run: |
+        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake metadata_lint
+
+    - name: Run puppet lint
+      run: |
+        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake lint
