@@ -158,11 +158,12 @@ define nfs::server::export(
     }
 
     nfs::functions::create_export { $v3_export_name:
-      ensure  => $ensure,
-      clients => $clients,
-      owner   => $owner,
-      group   => $group,
-      mode    => $mode,
+      ensure     => $ensure,
+      clients    => $clients,
+      create_dir => $create_dir,
+      owner      => $owner,
+      group      => $group,
+      mode       => $mode,
     }
 
     if $nfs::storeconfigs_enabled {
