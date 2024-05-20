@@ -11,6 +11,9 @@
 # [*ensure*]
 #   String. Sets if enabled or not.
 #
+# [*create_dir*]
+#   Boolean.  Create the directory to be exported.
+#
 # [*owner*]
 #   String. Sets the owner of the exported directory.
 #
@@ -37,6 +40,7 @@
 define nfs::functions::create_export (
   $clients,
   $ensure = 'present',
+  Boolean $create_dir = true,
   $owner  = undef,
   $group  = undef,
   $mode   = undef,
@@ -49,7 +53,9 @@ define nfs::functions::create_export (
       content => $line,
     }
 
-    unless defined(File[$name]) {
+    # Create the directory path only if a File resource isn't
+    # defined previously AND the $create_dir boolean is true.
+    unless defined(File[$name]) and $create_dir {
       filepath { $name:
         ensure => present,
         owner  => $owner,

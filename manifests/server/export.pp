@@ -52,6 +52,9 @@
 #   String. Sets the hostname clients will use to mount the exported resource. If undef it
 #   defaults to the trusted certname
 #
+# [*create_dir*]
+#   Boolean.  Create the directory to be exported.
+#
 # === Examples
 #
 # class { '::nfs':
@@ -96,6 +99,7 @@ define nfs::server::export(
   $mode                   = undef,
   $server                 = $::clientcert,
   $nfsv4_bindmount_enable = $::nfs::nfsv4_bindmount_enable,
+  Boolean $create_dir     = true,
 ) {
 
   if $nfs::server::nfs_v4 {
@@ -118,12 +122,13 @@ define nfs::server::export(
     }
 
     nfs::functions::create_export { $export_title:
-      ensure  => $ensure,
-      clients => $clients,
-      owner   => $owner,
-      group   => $group,
-      mode    => $mode,
-      require => $create_export_require,
+      ensure     => $ensure,
+      clients    => $clients,
+      create_dir => $create_dir,
+      owner      => $owner,
+      group      => $group,
+      mode       => $mode,
+      require    => $create_export_require,
     }
 
     if $mount != undef {
