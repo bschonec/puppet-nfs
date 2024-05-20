@@ -30,3 +30,4 @@ end
 group :release do
   gem 'puppet-blacksmith', '>= 6', '< 8', require: false
 end
+gem 'rspec-puppet-facts', :require => false
