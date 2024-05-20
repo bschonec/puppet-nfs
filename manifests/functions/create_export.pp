@@ -55,12 +55,14 @@ define nfs::functions::create_export (
 
     # Create the directory path only if a File resource isn't
     # defined previously AND the $create_dir boolean is true.
-    unless defined(File[$name]) and $create_dir {
-      filepath { $name:
-        ensure => present,
-        owner  => $owner,
-        group  => $group,
-        mode   => $mode,
+    unless defined(File[$name]) {
+      if $create_dir {
+        filepath { $name:
+          ensure => present,
+          owner  => $owner,
+          group  => $group,
+          mode   => $mode,
+        }
       }
     }
   }
