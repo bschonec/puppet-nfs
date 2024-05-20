@@ -1,20 +1,14 @@
-name: "ci"
+name: CI
 
-on:
-  pull_request:
-    branches:
-      - "main"
-      - "master"
-  workflow_dispatch:
+on: pull_request
+
+concurrency:
+  group: ${{ github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
-  Spec:
-    uses: "puppetlabs/cat-github-actions/.github/workflows/module_ci.yml@main"
-    secrets: "inherit"
+  puppet:
+    name: Puppet
+    uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
 
-  Acceptance:
-    needs: Spec
-    uses: "puppetlabs/cat-github-actions/.github/workflows/module_acceptance.yml@main"
-    secrets: "inherit"
-    with:
-      runs_on: "ubuntu-20.04"
+
