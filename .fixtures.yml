@@ -7,5 +7,6 @@ fixtures:
     augeas_core: "https://github.com/puppetlabs/puppetlabs-augeas_core.git"
     mount_core: "https://github.com/puppetlabs/puppetlabs-mount_core.git"
     transition: "https://github.com/puppetlabs/puppetlabs-transition.git"
+    filepath: "https://github.com/EdgeJ/puppet-filepath.git"
   symlinks:
     "nfs": "#{source_dir}"
