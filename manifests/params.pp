@@ -93,8 +93,8 @@ class nfs::params {
       $nfs_v4_idmap_nobody_group  = 'nogroup'
       $client_rpcbind_optname     = 'OPTIONS'
 
-      case $facts['os']['distro']['codename'] {
-        'bullseye': {
+      case $facts['os']['name'] {
+        'Debian': {
           $client_services            = { 'rpcbind' => {
               ensure => 'running',
               enable => false,
@@ -114,7 +114,7 @@ class nfs::params {
           $server_service_name        = 'nfs-kernel-server'
           $client_gssdopt_name        = 'GSSDARGS'
         }
-        'focal', 'jammy': {
+        'Ubuntu': {
           $client_services            = { 'rpcbind' => {} }
           $client_gssd_service_name   = { 'rpc-gssd' => {
               ensure => 'running',
@@ -188,24 +188,7 @@ class nfs::params {
           $server_nfsv4_servicehelper = ['nfs-idmap.service']
           $server_service_name        = 'nfs-server.service'
         }
-        '8': {
-          $client_idmapd_setting      = ['']
-          $client_nfs_options         = 'tcp,nolock,rsize=32768,wsize=32768,intr,noatime,actimeo=3'
-          $client_services_enable     = true
-          $client_gssdopt_name        = 'RPCGSSDARGS'
-          $client_services            = { 'rpcbind.service' => {} }
-          $client_gssd_service_name   = { 'rpc-gssd' => {
-              ensure => 'running',
-              enable => true,
-            },
-          }
-          $client_nfsv4_fstype        = 'nfs4'
-          $client_nfsv4_options       = 'tcp,nolock,rsize=32768,wsize=32768,intr,noatime,actimeo=3'
-          $client_nfsv4_services      = { 'rpcbind' => {} }
-          $server_nfsv4_servicehelper = ['nfs-idmapd.service']
-          $server_service_name        = 'nfs-server.service'
-        }
-        '9': {
+        '8', '9', '10': {
           $client_idmapd_setting      = ['']
           $client_nfs_options         = 'tcp,nolock,rsize=32768,wsize=32768,intr,noatime,actimeo=3'
           $client_services_enable     = true
