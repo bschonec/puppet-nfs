@@ -63,15 +63,6 @@
 #   share => 'share_name_on_nfs_server',
 # }
 #
-# Links
-#
-# * {Puppet Docs: Using Parameterized Classes}[http://j.mp/nVpyWY]
-#
-#   nfs::server::export { '/srv/nfs_exported/directory':
-#     clients => '1.2.3.4/24(rw,insecure,no_subtree_check,async,no_root_squash) 5.6.7.8/24(ro)',
-#     share => 'share_name_on_nfs_server',
-#   }
-#
 # @author
 #   * Daniel Klockenkaemper <dk@marketing-factory.de>
 #   * Martin Alfke <mailto:tuxmea@gmail.com>
