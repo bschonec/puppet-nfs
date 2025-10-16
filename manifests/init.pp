@@ -1,4 +1,3 @@
-
 # @param ensure
 #   Controls if the managed resources shall be `present` or `absent`.
 #
